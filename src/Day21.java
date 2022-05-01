@@ -1,4 +1,4 @@
-public class Main {
+public class Day21 {
     /**
      *
      * Because of time constraints, I wanted to make this better
