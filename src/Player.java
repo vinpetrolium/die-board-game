@@ -13,7 +13,7 @@ public class Player {
 
     public void displayStats(int dieRoll) {
         System.out.println(
-                this.name +
+                this.name + " landed on position " + board.getPosition() + " and" +
                 " has " + board.getScore() +
                 " points and the die has been rolled a total of " + dieRoll +
                 " times; " + board.getScore() + " * " + dieRoll + " = " + board.getScore() * dieRoll

@@ -9,14 +9,18 @@ public class Day21 {
 
     public static void main(String[] args) {
         int rolledValue = 0;
-        Player p1 = new Player("Player 1", new Board(4, 0));
-        Player p2 = new Player("Player 2", new Board(8, 0));
+        Player p1 = new Player("Player1", new Board(8, 0));
+        Player p2 = new Player("Player2", new Board(7, 0));
         Die die = new Die(100);
 
-        while(p1.getBoard().getScore() < 1000) {
+        while(true) {
             rolledValue = die.rollDie();
             p1.getBoard().movePositions(rolledValue);
             p1.calculatePlayerScore();
+
+            if(p1.getBoard().getScore() >= 1000) {
+                break;
+            }
 
             rolledValue = die.rollDie();
             p2.getBoard().movePositions(rolledValue);

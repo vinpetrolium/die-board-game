@@ -9,7 +9,8 @@ public class Board {
 
     public void movePositions(int numberOfMoves) {
         if((position + numberOfMoves) > 10) {
-            position = (position + numberOfMoves) % 10;
+            int tempPosition = (position + numberOfMoves) % 10;
+            position = tempPosition == 0 ? 10 : tempPosition ;
         } else {
             position += numberOfMoves;
         }

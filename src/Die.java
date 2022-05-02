@@ -1,20 +1,28 @@
 public class Die {
     private final int dieLimit;
     private int numberOfRolls = 0;
-    private int lastRoll = 0;
+    private int lastRoll = 1;
 
     public Die(int dieLimit) {
         this.dieLimit = dieLimit;
     }
 
     public int rollDie() {
-        int rollValue = (lastRoll + 1) + (lastRoll + 2) + (lastRoll + 3);
+        int a, b, c;
+        a = getDieNextNumber();
+        b = getDieNextNumber();
+        c = getDieNextNumber();
+//        System.out.print("Player rolls - " + a + " + " + b + " + " + c + " ");
+        return a + b + c;
+    }
+
+    private int getDieNextNumber() {
         numberOfRolls++;
-        lastRoll += 3;
-        if (numberOfRolls != 1 && numberOfRolls % dieLimit == 1) {
-            lastRoll = 0;
+        if(lastRoll > 100) {
+            lastRoll = 1;
+            return lastRoll++;
         }
-        return rollValue;
+        return lastRoll++;
     }
 
     public int getNumberOfRolls() {
